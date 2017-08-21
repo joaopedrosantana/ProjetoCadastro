@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:hint="Nome Completo"
+        android:inputType="textEmailAddress"
+        android:maxLength="40"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:maxLength="40"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:hint="Telefone"
+        android:inputType="phone"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+    <EditText
+        android:id="@+id/edit_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:hint="Username"
+        android:inputType="text"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+    <Button
+        android:id="@+id/btn_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:background="@drawable/screen_border"
+        android:text="Cadastre-se"/>
+    <TextView
+        android:id="@+id/link_login"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:text="Login"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        />
+
+</LinearLayout>

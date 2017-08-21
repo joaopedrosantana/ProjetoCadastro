@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+        android:maxLength="40"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textColorHint="#C0C0C0" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20sp"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/check_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Mantenha-me conectado."
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrar" />
+</android.support.v7.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/link_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginTop="20sp"
+        android:autoLink="all"
+        android:text="Cadastre-se"
+        android:textAlignment="center"
+        android:textColor="#fff" />
+
+
+</LinearLayout>
