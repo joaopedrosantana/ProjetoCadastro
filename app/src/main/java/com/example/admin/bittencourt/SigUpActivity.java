@@ -1,25 +1,27 @@
 package com.example.admin.bittencourt;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by admin on 09/08/2017.
@@ -30,12 +32,15 @@ public class SigUpActivity extends AppCompatActivity {
     private Button btnCadastro;
     private String phoneInvalid;
     private String emailValidate;
-
+    private String array_spinner[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+
+
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         final SharedPreferences.Editor editor = pref.edit();
@@ -120,7 +125,31 @@ public class SigUpActivity extends AppCompatActivity {
             }
         });
 
+        Spinner s = (Spinner) findViewById(R.id.state);
+        try {
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
 
+            JSONArray m_jArry = obj.getJSONArray("data");
+            //ArrayList<HashMap<String, String>> formList = new ArrayList<HashMap<String, String>>();
+            // HashMap<String, String> m_li;
+            String[] state=new String[ m_jArry.length()];
+            for (int i = 0; i < m_jArry.length(); i++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                Log.e("Details-->", jo_inside.getString("nome"));
+
+                state[i]=jo_inside.getString("nome");
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, state);
+                s.setAdapter(adapter);
+                // m_li = new HashMap<String, String>();
+                //m_li.get("nome");
+                // m_li.get("uf");
+
+                //formList.add(m_li);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -216,4 +245,22 @@ public class SigUpActivity extends AppCompatActivity {
         }
         return isValid;
     }
+
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getAssets().open("states.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+
 }
