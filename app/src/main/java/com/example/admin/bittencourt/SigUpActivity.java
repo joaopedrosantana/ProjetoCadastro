@@ -2,6 +2,8 @@ package com.example.admin.bittencourt;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -9,6 +11,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +25,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by admin on 09/08/2017.
@@ -38,8 +43,6 @@ public class SigUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
-
 
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
@@ -125,22 +128,23 @@ public class SigUpActivity extends AppCompatActivity {
             }
         });
 
-        Spinner s = (Spinner) findViewById(R.id.state);
+        Spinner comboState = (Spinner) findViewById(R.id.state);
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
 
-            JSONArray m_jArry = obj.getJSONArray("data");
+            JSONArray jArray = obj.getJSONArray("data");
             //ArrayList<HashMap<String, String>> formList = new ArrayList<HashMap<String, String>>();
             // HashMap<String, String> m_li;
-            String[] state=new String[ m_jArry.length()];
-            for (int i = 0; i < m_jArry.length(); i++) {
-                JSONObject jo_inside = m_jArry.getJSONObject(i);
-                Log.e("Details-->", jo_inside.getString("nome"));
+            ArrayList<String> state = new ArrayList<String>();
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject jObject = jArray.getJSONObject(i);
+                Log.e("Details-->", jObject.getString("nome"));
 
-                state[i]=jo_inside.getString("nome");
+                state.add(i, jObject.getString("nome"));
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, state);
-                s.setAdapter(adapter);
+                ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, (state.toArray()));
+                adapter.setDropDownViewResource(R.layout.spinner_box);
+                comboState.setAdapter(adapter);
                 // m_li = new HashMap<String, String>();
                 //m_li.get("nome");
                 // m_li.get("uf");
