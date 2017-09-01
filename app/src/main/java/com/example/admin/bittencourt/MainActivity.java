@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    private TextView nameUser, emailUser, phoneUser;
+    private TextView nameUser, emailUser, phoneUser, stateUser;
     private Button btnSair;
 
     @Override
@@ -30,15 +30,17 @@ public class MainActivity extends AppCompatActivity {
         emailUser=(TextView)findViewById(R.id.email);
         phoneUser=(TextView)findViewById(R.id.phone);
         btnSair=(Button)findViewById(R.id.btn_exit);
-
+        stateUser=(TextView)findViewById(R.id.state);
         String name= pref.getString("name", null);
         String email= pref.getString("email", null);
         String phone= pref.getString("phone",null);
+        String state= pref.getString("state",null);
 
         if (name!=null){
             nameUser.setText("Nome: "+name);
             emailUser.setText("Email: "+email);
             phoneUser.setText("Telefone: "+phone);
+            stateUser.setText("Estado: "+state);
         }else{
            String user= getIntent().getExtras().getString("name");
             nameUser.setText(user);

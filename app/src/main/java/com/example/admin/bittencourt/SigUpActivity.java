@@ -35,15 +35,18 @@ import java.util.Arrays;
 public class SigUpActivity extends AppCompatActivity {
     private EditText name, email, phone, user, pass;
     private Button btnCadastro;
-    private String phoneInvalid;
-    private String emailValidate;
-    private String array_spinner[];
+    private String emailValidate, spinnerValidate, phoneInvalid;
+    private Spinner comboState;
+    private TextView errorText;
+    private ArrayAdapter adapter;
+    private String valueSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
+        comboState = (Spinner) findViewById(R.id.state);
+        errorText = (TextView) comboState.getSelectedView();
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         final SharedPreferences.Editor editor = pref.edit();
@@ -84,6 +87,7 @@ public class SigUpActivity extends AppCompatActivity {
                     editor.putString("phone", phone.getText().toString());
                     editor.putString("user", user.getText().toString());
                     editor.putString("pass", pass.getText().toString());
+                    editor.putString("state", valueSpinner);
                     editor.putInt("count", 1);
                     editor.commit();
 
@@ -136,15 +140,19 @@ public class SigUpActivity extends AppCompatActivity {
             //ArrayList<HashMap<String, String>> formList = new ArrayList<HashMap<String, String>>();
             // HashMap<String, String> m_li;
             ArrayList<String> state = new ArrayList<String>();
-            for (int i = 0; i < jArray.length(); i++) {
+            state.add(0, "Selecione o Estado...");
+
+            for (int i = 1; i < jArray.length(); i++) {
                 JSONObject jObject = jArray.getJSONObject(i);
                 Log.e("Details-->", jObject.getString("nome"));
 
+
                 state.add(i, jObject.getString("nome"));
 
-                ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, (state.toArray()));
+                adapter = new ArrayAdapter(this, R.layout.spinner_text, (state.toArray()));
                 adapter.setDropDownViewResource(R.layout.spinner_box);
                 comboState.setAdapter(adapter);
+
                 // m_li = new HashMap<String, String>();
                 //m_li.get("nome");
                 // m_li.get("uf");
@@ -154,6 +162,22 @@ public class SigUpActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        comboState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                spinnerValidate = String.valueOf(position);
+                valueSpinner = parent.getSelectedItem().toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+
+        });
     }
 
 
@@ -214,7 +238,13 @@ public class SigUpActivity extends AppCompatActivity {
     private boolean validForm() {
         boolean isValid = true;
         emailValidate = email.getText().toString();
-
+        comboState = (Spinner) findViewById(R.id.state);
+        errorText = (TextView) comboState.getSelectedView();
+        Log.e("validation", spinnerValidate);
+        if (spinnerValidate.equals("0")) {
+            errorText.setError("Campo Obrigatório");
+            isValid = false;
+        }
         if (name.getText().toString().isEmpty()) {
             name.setError("Campo Obrigatório");
             isValid = false;

@@ -15,7 +15,8 @@
         android:maxLength="40"
         android:maxLines="1"
         android:textColor="#fff"
-        android:textColorHint="#C0C0C0" />
+        android:textColorHint="#C0C0C0"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/edit_email"
@@ -27,7 +28,8 @@
         android:maxLength="40"
         android:maxLines="1"
         android:textColor="#fff"
-        android:textColorHint="#C0C0C0" />
+        android:textColorHint="#C0C0C0"
+        android:textSize="20sp"/>
     <EditText
         android:id="@+id/edit_phone"
         android:layout_width="match_parent"
@@ -38,7 +40,8 @@
         android:maxLength="14"
         android:maxLines="1"
         android:textColor="#fff"
-        android:textColorHint="#C0C0C0" />
+        android:textColorHint="#C0C0C0"
+        android:textSize="20sp"/>
    <Spinner
        android:id="@+id/state"
        android:layout_width="match_parent"
@@ -56,7 +59,8 @@
         android:maxLength="15"
         android:maxLines="1"
         android:textColor="#fff"
-        android:textColorHint="#C0C0C0" />
+        android:textColorHint="#C0C0C0"
+        android:textSize="20sp"/>
     <EditText
         android:id="@+id/edit_pass"
         android:layout_width="match_parent"
@@ -67,14 +71,16 @@
         android:maxLength="15"
         android:maxLines="1"
         android:textColor="#fff"
-        android:textColorHint="#C0C0C0" />
+        android:textColorHint="#C0C0C0"
+        android:textSize="20sp"/>
     <Button
         android:id="@+id/btn_cadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20sp"
         android:background="@drawable/screen_border"
-        android:text="Cadastre-se"/>
+        android:text="Cadastre-se"
+        android:textSize="20sp"/>
     <TextView
         android:id="@+id/link_login"
         android:layout_width="match_parent"
@@ -82,6 +88,7 @@
         android:text="Login"
         android:textColor="#fff"
         android:textAlignment="center"
+        android:textSize="18sp"
         />
 
 </LinearLayout>
