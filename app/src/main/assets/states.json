@@ -1,0 +1,142 @@
+{
+  "data": [
+    {
+      "nome": "Acre",
+      "uf": "AC",
+      "id": "56ea19bdebb16821383f6da5"
+    },
+    {
+      "nome": "Alagoas",
+      "uf": "AL",
+      "id": "56ea19d7ebb16821383f6dbc"
+    },
+    {
+      "nome": "Amapá",
+      "uf": "AP",
+      "id": "56ea19dcebb16821383f6e62"
+    },
+    {
+      "nome": "Amazonas",
+      "uf": "AM",
+      "id": "56ea19daebb16821383f6e23"
+    },
+    {
+      "nome": "Bahia",
+      "uf": "BA",
+      "id": "56ea19ddebb16821383f6e73"
+    },
+    {
+      "nome": "Ceará",
+      "uf": "CE",
+      "id": "56ea19eaebb16821383f7015"
+    },
+    {
+      "nome": "Distrito Federal",
+      "uf": "DF",
+      "id": "56ea19efebb16821383f70ce"
+    },
+    {
+      "nome": "Espírito Santo",
+      "uf": "ES",
+      "id": "56ea19efebb16821383f70d0"
+    },
+    {
+      "nome": "Goiás",
+      "uf": "GO",
+      "id": "56ea19f2ebb16821383f711f"
+    },
+    {
+      "nome": "Maranhão",
+      "uf": "MA",
+      "id": "56ea19f8ebb16821383f7216"
+    },
+    {
+      "nome": "Mato Grosso",
+      "uf": "MT",
+      "id": "56ea1a17ebb16821383f7695"
+    },
+    {
+      "nome": "Mato Grosso do Sul",
+      "uf": "MS",
+      "id": "56ea1a15ebb16821383f7646"
+    },
+    {
+      "nome": "Minas Gerais",
+      "uf": "MG",
+      "id": "56ea19feebb16821383f72f0"
+    },
+    {
+      "nome": "Pará",
+      "uf": "PA",
+      "id": "56ea1a1bebb16821383f7723"
+    },
+    {
+      "nome": "Paraíba",
+      "uf": "PB",
+      "id": "56ea1a1febb16821383f77b3"
+    },
+    {
+      "nome": "Paraná",
+      "uf": "PR",
+      "id": "56ea1a30ebb16821383f7a2d"
+    },
+    {
+      "nome": "Pernambuco",
+      "uf": "PE",
+      "id": "56ea1a25ebb16821383f7893"
+    },
+    {
+      "nome": "Piauí",
+      "uf": "PI",
+      "id": "56ea1a2aebb16821383f794d"
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "uf": "RJ",
+      "id": "56ea1a3cebb16821383f7bbd"
+    },
+    {
+      "nome": "Rio Grande do Norte",
+      "uf": "RN",
+      "id": "56ea1a3eebb16821383f7c1a"
+    },
+    {
+      "nome": "Rio Grande do Sul",
+      "uf": "RS",
+      "id": "56ea1a45ebb16821383f7d07"
+    },
+    {
+      "nome": "Rondônia",
+      "uf": "RO",
+      "id": "56ea1a43ebb16821383f7cc2"
+    },
+    {
+      "nome": "Roraima",
+      "uf": "RR",
+      "id": "56ea1a44ebb16821383f7cf7"
+    },
+    {
+      "nome": "Santa Catarina",
+      "uf": "SC",
+      "id": "56ea1a52ebb16821383f7ef8"
+    },
+    {
+      "nome": "São Paulo",
+      "uf": "SP",
+      "id": "56ea1a5cebb16821383f806a"
+    },
+    {
+      "nome": "Sergipe",
+      "uf": "SE",
+      "id": "56ea1a5aebb16821383f801e"
+    },
+    {
+      "nome": "Tocantins",
+      "uf": "TO",
+      "id": "56ea1a6eebb16821383f82f0"
+    }
+  ],
+  "erro": false,
+  "message": "Sucesso",
+  "messageEx": null
+}
